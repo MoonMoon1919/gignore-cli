@@ -8,8 +8,6 @@ import (
 	"github.com/urfave/cli/v3"
 )
 
-var VERSION string = "development"
-
 func logActionResults(results []gignore.Result) {
 	for _, result := range results {
 		log.Print(result.Log())
@@ -106,9 +104,8 @@ func AppBuilder(svc gignore.Service) *cli.Command {
 	}
 
 	cmd := &cli.Command{
-		Name:    "gignore-cli",
-		Usage:   "Manage your ignore files with ease",
-		Version: VERSION,
+		Name:  "gignore-cli",
+		Usage: "Manage your ignore files with ease",
 		Commands: []*cli.Command{
 			makePathCommand("create", "create a new ignore file", []cli.Flag{},
 				func(path string, c *cli.Command) error {
