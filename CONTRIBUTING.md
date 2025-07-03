@@ -1,4 +1,4 @@
-# Contributing to go-api-reference
+# Contributing to gignore-cli
 
 ## Getting Started
 
