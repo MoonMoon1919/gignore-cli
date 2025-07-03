@@ -2,6 +2,8 @@
 
 A powerful CLI tool for managing ignore files (`.gitignore`, `.dockerignore`, etc.) with intelligent conflict detection, rule analysis, and automatic optimization.
 
+Powered by [gignore](https://github.com/MoonMoon1919/gignore)
+
 ## Features
 
 - **Create** ignore files from scratch
