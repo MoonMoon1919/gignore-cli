@@ -2,7 +2,6 @@ package builder
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"github.com/MoonMoon1919/gignore"
@@ -247,8 +246,12 @@ func AppBuilder(svc gignore.Service) *cli.Command {
 						return err
 					}
 
+					if len(conflicts) == 0 {
+						log.Print("No conflicts found")
+					}
+
 					for _, conflict := range conflicts {
-						fmt.Printf("FOUND CONFLICT: Left: %s, Right: %s, Type: %s \n", conflict.Left.Render(), conflict.Right.Render(), conflict.ConflictType)
+						log.Printf("FOUND CONFLICT: Left: %s, Right: %s, Type: %s \n", conflict.Left.Render(), conflict.Right.Render(), conflict.ConflictType)
 					}
 
 					if fix && len(conflicts) > 0 {
